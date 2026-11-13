@@ -31,3 +31,13 @@
 .game-grid button.hint-green{background:#85ee9d!important;border:4px solid #14983d!important;box-shadow:0 0 0 3px #14983d88,0 0 18px #33dd66!important}
 /* MooCow's Highway Game */
 .highway-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;width:100%;height:100%;min-height:0}.highway-road{position:relative;flex:1;min-height:170px;width:min(82vw,340px);background:linear-gradient(90deg,#3e444a 0 32.5%,#f4eaa2 32.5% 33.3%,#3e444a 33.3% 65.8%,#f4eaa2 65.8% 66.6%,#3e444a 66.6%);border-left:8px solid #eee;border-right:8px solid #eee;overflow:hidden;touch-action:none;border-radius:8px}.highway-lines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 42px,#ffffff77 42px 66px,transparent 66px 108px);background-size:100% 108px;opacity:.25}.highway-car{position:absolute;transform:translateX(-50%);font-size:clamp(28px,7vh,48px);line-height:1;z-index:2}.player-car{top:79%;transition:left .12s ease}.traffic-car{top:-12%}.highway-controls{display:flex;gap:15px}.highway-wrap p{font-size:12px}.highway-wrap .pink-button{margin:2px}
+
+/* ESSA Rush: show the actual ESSA artwork instead of car emoji */
+.highway-car{display:flex;align-items:center;justify-content:center;overflow:visible}
+.highway-car img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 3px #0007);pointer-events:none}
+
+/* ESSA Rush sprite sizing: constrain artwork to each lane, even for huge source PNGs. */
+.highway-road .highway-car{box-sizing:border-box;width:25%;height:12%;max-width:85px;max-height:76px;min-width:0;min-height:0;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.highway-road .highway-car img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;pointer-events:none}
+.highway-road .player-car{top:auto;bottom:3%;transition:left .12s ease}
+.highway-road .traffic-car{top:-12%}

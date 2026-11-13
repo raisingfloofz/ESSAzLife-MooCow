@@ -41,3 +41,25 @@
 .highway-road .highway-car img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;pointer-events:none}
 .highway-road .player-car{top:auto;bottom:3%;transition:left .12s ease}
 .highway-road .traffic-car{top:-12%}
+
+/* ESSA Rush: edge-to-edge playfield and accessible, persistent music volume */
+#fullScreen.rush-fullscreen{background:#3e444a}
+#fullScreen.rush-fullscreen .full-main{position:absolute;inset:0;padding:0;display:block;overflow:hidden;gap:0}
+#fullScreen.rush-fullscreen .full-header{pointer-events:none;position:absolute;inset:0 0 auto 0;height:0;padding:0;background:transparent;z-index:30}
+#fullScreen.rush-fullscreen .full-header h2{display:none}
+#fullScreen.rush-fullscreen .full-header .exit{pointer-events:auto;position:fixed;left:max(10px,env(safe-area-inset-left));top:max(10px,env(safe-area-inset-top));z-index:35;width:44px;height:44px;display:grid;place-items:center;padding:0;background:#e4f4ffed;box-shadow:0 2px 8px #0006}
+#fullScreen.rush-fullscreen .highway-wrap{position:absolute;inset:0;width:100%;height:100%;height:100dvh;display:block;overflow:hidden}
+#fullScreen.rush-fullscreen .highway-road{position:absolute;inset:0;width:100%;height:100%;max-width:none;min-height:0;flex:none;border:0;border-radius:0;touch-action:none}
+#fullScreen.rush-fullscreen .highway-road .highway-car{width:min(22%,100px);height:min(12%,92px);max-width:none;max-height:none}
+#fullScreen.rush-fullscreen .rush-topbar{position:absolute;top:max(10px,env(safe-area-inset-top));left:64px;right:max(10px,env(safe-area-inset-right));z-index:20;display:flex;justify-content:space-between;align-items:center;gap:8px;pointer-events:none}
+#fullScreen.rush-fullscreen #highwayScore{padding:9px 11px;border-radius:12px;background:#e4f4ffef;color:#174b76;font-size:clamp(12px,2.8vw,18px);font-weight:bold;box-shadow:0 2px 8px #0005;white-space:nowrap}
+#fullScreen.rush-fullscreen .rush-volume{pointer-events:auto;display:flex;align-items:center;gap:6px;background:#e4f4fff5;color:#174b76;padding:7px 9px;border-radius:14px;box-shadow:0 2px 8px #0006;font-size:14px;font-weight:bold}
+#fullScreen.rush-fullscreen .rush-volume input{width:clamp(66px,13vw,140px);height:25px;accent-color:#168ad6;cursor:pointer;touch-action:auto}
+#fullScreen.rush-fullscreen .rush-volume output{min-width:34px;font-size:12px;text-align:right}
+#fullScreen.rush-fullscreen .highway-controls{position:absolute;bottom:max(58px,calc(env(safe-area-inset-bottom) + 58px));left:0;right:0;z-index:12;display:flex;justify-content:space-between;padding:0 12px;pointer-events:none}
+#fullScreen.rush-fullscreen .highway-controls button{pointer-events:auto;min-width:92px;background:#e4f4ffee;color:#174b76}
+#fullScreen.rush-fullscreen .highway-wrap>p{display:none}
+#fullScreen.rush-fullscreen #highwayRestart,#fullScreen.rush-fullscreen #highwayBack{position:absolute;bottom:max(8px,env(safe-area-inset-bottom));z-index:12;font-size:13px;padding:8px 11px;background:#e4f4ffee;color:#174b76}
+#fullScreen.rush-fullscreen #highwayRestart{left:10px}
+#fullScreen.rush-fullscreen #highwayBack{right:10px}
+@media(max-width:480px){#fullScreen.rush-fullscreen .rush-volume-label{display:none}#fullScreen.rush-fullscreen .rush-volume{gap:3px;padding:5px}#fullScreen.rush-fullscreen .rush-volume input{width:70px}#fullScreen.rush-fullscreen #highwayScore{padding:8px 6px;font-size:12px}}
